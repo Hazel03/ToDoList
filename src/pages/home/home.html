@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            To Do List
+        </ion-title>
+        <ion-buttons end>
+        <button ion-button full (click)="create()">ADD NEW TASK</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let t of todos">
+            <ion-item>
+                {{t.task}}
+            </ion-item>
+
+            <ion-item-options>
+                <button ion-button icon-only (click)="edit(t)" light>
+                    <ion-icon name="paper"></ion-icon> 
+                </button>
+                <button ion-button icon-only (click)="delete(t)" danger>
+                    <ion-icon name="trash"></ion-icon> 
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
